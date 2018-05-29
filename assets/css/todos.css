@@ -10,15 +10,10 @@ background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, F
 
 #container{
 	margin: 100px auto;
-	width: 360px;
+	width: 500px;
 	background: #f7f7f7;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 	font-family: Roboto;
-}
-
-.clicked{
-	color: #dadfe1;
-	text-decoration: line-through;
 }
 
 h1{
@@ -66,7 +61,7 @@ input:focus{
 	outline: none;
 }
 
-.fa-plus{
+.fa-plus, .fa-archive{
 	float: right;
 	line-height: 45px;
 	margin-top: 13px;
@@ -76,13 +71,17 @@ span{
 	background: #e74c3c;
 	height: 40px;
 	width: 0;
-	margin-right: 20px;
 	text-align: center;
 	color: white;
 	display: inline-block;
 	transition: 0.3s;
 	opacity: 0;
 
+}
+
+
+#li{
+	padding-left: 20px;
 }
 
 li:hover span{
