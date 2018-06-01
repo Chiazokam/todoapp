@@ -42,7 +42,7 @@ li{
 }
 
 li:nth-child(2n){
-	background: #f7f7f7;
+	background: #f7f7f7; 
 }
 
 input{
@@ -67,7 +67,7 @@ input:focus{
 	margin-top: 13px;
 }
 
-span{
+.spanclass{
 	background: #e74c3c;
 	height: 40px;
 	width: 0;
@@ -84,7 +84,7 @@ span{
 	padding-left: 20px;
 }
 
-li:hover span{
+li:hover .spanclass{
 	width: 40px;
 	opacity: 1;
 }

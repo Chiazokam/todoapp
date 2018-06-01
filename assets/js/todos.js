@@ -23,40 +23,46 @@ $("ul").on("click", "li", function(){
 //Click on X to delete
 //.fa-trash-alt specifies that it's the span with "fa-trash-alt" class that is to be deleted
 
-$("ul").on("click", ".fa-trash-alt", function(event){
+$("ul").on("click", "li", function(event){
 
-	$(this).parent().fadeOut(500, function(){
-
-		$(this).remove();
-	});
-
-	event.stopPropagation();              //Stops the parent from executing the code
-});
-
-
-
-//Check to take item to completed tasks
-
-$("ul").on("click", "#check", function(event){
-
-	$(this).parent().fadeOut(500, function(){
+	$(this).fadeOut(500, function(){
 
 		$(this).remove();
 	});
 
 	event.stopPropagation();              //Stops the parent from executing the code
 });
+
+
 
 //Capturing the user's input
 $("input").on("keypress", function(event){
 
 	if(event.which === 13){
 
-		$("ul").append("<li><span id ='check'><input type='checkbox'><span><i class='fa fa-trash-alt'></i></span> " + "&nbsp; &nbsp; &nbsp" + $(this).val() + "</li>");
+		$(".todo").append("<li><span class ='check spanclass'><input type='checkbox'></span><span class='spanclass'><i class='fa fa-trash-alt'></i></span> " + "&nbsp; &nbsp; &nbsp" + $(this).val() + "</li>");
 
 		$("input").val("");
 	}
 })
+
+
+
+//Taking items from ToDo to completed tasks
+
+$("ul").on("click", ".check", function(event){
+
+	$(this).parent().fadeOut(500, function(){
+
+		var item = document.querySelector(".task");
+
+		$(".completed").append("<li><span class='spanclass'><i class='fa fa-trash-alt'></i></span>" + "&nbsp; &nbsp; &nbsp" + $("#litodo").text() + "</li>");
+
+		$(this).remove();
+	});
+              //Stops the parent from executing the code
+});
+
 
 
 $(".fa-plus").on("click", function(){
